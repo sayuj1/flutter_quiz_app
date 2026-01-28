@@ -15,7 +15,7 @@ class AnswerButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onSelected,
       style: ElevatedButton.styleFrom(foregroundColor: Colors.blue),
-      child: Text(answer),
+      child: Text(answer, textAlign: TextAlign.center),
     );
   }
 }
