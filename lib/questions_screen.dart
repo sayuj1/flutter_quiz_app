@@ -16,26 +16,32 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
     final currentQuestion = questions[currentQuestionIndex];
     return SizedBox(
       width: double.infinity,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(
-            child: Text(
-              currentQuestion.question,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                height: 1.2,
-                letterSpacing: 1.2,
+      child: Container(
+        margin: const EdgeInsets.all(40),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+
+          children: [
+            Center(
+              child: Text(
+                currentQuestion.question,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  height: 1.2,
+                  letterSpacing: 1.2,
+                ),
+                textAlign: TextAlign.center,
               ),
             ),
-          ),
-          SizedBox(height: 20),
-          ...currentQuestion.options.map((option) {
-            return AnswerButton(answer: option, onSelected: () {});
-          }),
-        ],
+            SizedBox(height: 20),
+            ...currentQuestion.options.map((option) {
+              return AnswerButton(answer: option, onSelected: () {});
+            }),
+          ],
+        ),
       ),
     );
   }
