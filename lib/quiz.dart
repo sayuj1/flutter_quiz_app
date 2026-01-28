@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:first_project/start_screen.dart';
 import 'package:first_project/questions_screen.dart';
+import 'package:first_project/data/questions.dart';
+import 'package:first_project/result_screen.dart';
 
 class Quiz extends StatefulWidget {
   const Quiz({super.key}); //accept and forward key argument
@@ -29,6 +31,21 @@ class _QuizState extends State<Quiz> {
 
   void chooseAnswer(String answer) {
     chosenAnswers.add(answer);
+    if (chosenAnswers.length == questions.length) {
+      setState(() {
+        _currentScreen = ResultsScreen(
+          chosenAnswers: chosenAnswers,
+          restartQuiz: restartQuiz,
+        );
+      });
+    }
+  }
+
+  void restartQuiz() {
+    setState(() {
+      chosenAnswers.clear();
+      _currentScreen = StartScreen(switchScreen);
+    });
   }
 
   @override
