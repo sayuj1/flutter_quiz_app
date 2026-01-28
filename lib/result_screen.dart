@@ -52,17 +52,6 @@ class ResultsScreen extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 20),
-            // Text(
-            //   'List of answers and questions...',
-            //   style: GoogleFonts.lato(
-            //     color: Colors.white,
-            //     fontSize: 24,
-            //     fontWeight: FontWeight.bold,
-            //     height: 1.2,
-            //     letterSpacing: 1.2,
-            //   ),
-            //   textAlign: TextAlign.center,
-            // ),
             QuestionsSummary(summaryData: getSummaryData()),
             SizedBox(height: 20),
             ElevatedButton.icon(
