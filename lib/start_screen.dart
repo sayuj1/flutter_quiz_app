@@ -29,6 +29,9 @@ class StartScreen extends StatelessWidget {
             onPressed: startQuiz,
             icon: const Icon(Icons.arrow_forward_ios),
             label: const Text('Start Quiz'),
+            style: ElevatedButton.styleFrom(
+              foregroundColor: const Color.fromARGB(255, 13, 167, 202),
+            ),
           ),
         ],
       ),
